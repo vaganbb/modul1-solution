@@ -7,16 +7,16 @@
     LunchCheckController.$inject = ['$scope'];
 
     function LunchCheckController($scope) {
-       $scope.name = "Please enter your dish wish list.";
+       $scope.name = "Please enter data first";
 
        $scope.feedLunch = function () {
-          if ($scope.dishList == undefined){
+          if (($scope.dishList == undefined) || ($scope.dishList.length == 0)){
              return $scope.name = "Please check your input!";
           }
 
          var numOfDishes = countDishlist($scope.dishList);
          
-         if (numOfDishes < 4){
+         if (numOfDishes < 4 ){
             return $scope.name = "Enjoy!";
          }
          else {
