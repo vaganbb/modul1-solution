@@ -7,11 +7,11 @@
     LunchCheckController.$inject = ['$scope'];
 
     function LunchCheckController($scope) {
-       $scope.name = "Please enter data first";
+       $scope.name = "";
 
        $scope.feedLunch = function () {
           if (($scope.dishList == undefined) || ($scope.dishList.length == 0)){
-             return $scope.name = "Please check your input!";
+             return $scope.name = "Please enter data first";
           }
 
          var numOfDishes = countDishlist($scope.dishList);
